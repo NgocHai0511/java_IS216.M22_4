@@ -1,0 +1,217 @@
+create table ga(
+    maGa char(5) primary key,
+    TenGa varchar(20)
+);
+
+create table LichTrinh(
+    maLT char(5) primary key,
+    gaKH char(5),
+    gaKT char(5),
+    maTau char(5),
+    TgianKH Date
+);
+
+--select maLT as haha,gaKH,gaKT,maTau,TgianKH ,to_char( TgianKH, 'DD/MM/YYYY HH24:MI:SS' ) as Tgian from LichTrinh
+--insert into lichtrinh values('LT02','KH02','GA02','GA03',to_date('05/11/2002 17:05:05', 'DD/MM/YYYY HH24:MI:SS'));
+
+create table CTVe(
+    MaVe char(5),
+    MaGhe char(5)
+);
+
+create table Ve(
+    MaVe char(5) primary key,
+    MaKH char(5),
+    maLT char(5),
+    NgayDatVe Date,
+    TongTien int
+);
+
+create table Ghe(
+    MaGhe char(5),
+    MaTau char(5),
+    GiaTien int,
+    PRIMARY KEY (MaGhe, MaTau)
+);
+--insert into Ghe values ('GHE01','TAU02');
+--insert into Ghe values ('GHE01','TAU01');
+create table Tau(
+    maTau char(5) primary key,
+    TenTau varchar(20),
+    Loaitau int     -- 1: Binh Dan 2:Cao Cap 3:Thuong Gia
+);
+create table KhachHang(
+    maKH char(5) primary key,
+    HoTen varchar(50),
+    sodt char(10),
+    tendn char(20)
+);
+create table TaiKhoan(
+    TENDN	CHAR(20) primary key,
+    MATKHAU	CHAR(20),
+    CAUHOI	VARCHAR2(50),
+    TRALOI	VARCHAR2(50),
+    LOAITK	int       --1: Admin 2:KhachHang
+);
+-------------------------------------------------------------------------------------------------
+insert into ga values ('GA01','Quảng Ngãi');
+insert into ga values ('GA02','Hồ Chí Minh');
+insert into ga values ('GA03','Hà Nội');
+insert into ga values ('GA04','Đà Nẵng');
+insert into ga values ('GA05','Lâm Đồng');
+-------------------------------------------------------------------------------------------------
+insert into lichtrinh values('LT01','GA01','GA02','TAU01',to_date('05/11/2002 17:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT02','GA01','GA02','TAU03',to_date('05/11/2002 12:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT03','GA01','GA02','TAU02',to_date('06/11/2002 17:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+
+insert into lichtrinh values('LT04','GA01','GA02','TAU01',to_date('27/06/2022 12:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT05','GA01','GA02','TAU02',to_date('27/06/2022 12:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT06','GA01','GA02','TAU03',to_date('27/06/2022 12:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT07','GA01','GA02','TAU01',to_date('27/06/2022 17:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT08','GA01','GA02','TAU02',to_date('27/06/2022 17:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT09','GA01','GA02','TAU03',to_date('28/06/2022 17:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT10','GA01','GA02','TAU01',to_date('28/06/2022 12:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT11','GA01','GA02','TAU02',to_date('28/06/2022 12:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT12','GA01','GA02','TAU03',to_date('28/06/2022 12:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT13','GA01','GA02','TAU01',to_date('28/06/2022 17:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT14','GA01','GA02','TAU02',to_date('28/06/2022 17:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+insert into lichtrinh values('LT15','GA01','GA02','TAU03',to_date('28/06/2022 17:00:00', 'DD/MM/YYYY HH24:MI:SS'));
+
+
+-------------------------------------------------------------------------------------------------
+--insert into ctve values('VE01','GHE01');
+--insert into ctve values('VE02','GHE03');
+--insert into ctve values('VE03','GHE05');
+
+insert into ctve values('VE04','GHE01');
+insert into ctve values('VE04','GHE03');
+insert into ctve values('VE04','GHE05');
+insert into ctve values('VE05','GHE03');
+insert into ctve values('VE05','GHE05');
+insert into ctve values('VE05','GHE07');
+insert into ctve values('VE06','GHE02');
+insert into ctve values('VE06','GHE04');
+insert into ctve values('VE06','GHE06');
+
+-------------------------------------------------------------------------------------------------
+--insert into ve values('VE01','KH01','LT01',To_date('05/11/2002','DD/MM/YYYY'),300000);
+--insert into ve values('VE02','KH02','LT01',To_date('05/11/2002','DD/MM/YYYY'),300000);
+--insert into ve values('VE03','KH03','LT01',To_date('05/11/2002','DD/MM/YYYY'),300000);
+
+insert into ve values('VE04','KH01','LT09',To_date('27/06/2002','DD/MM/YYYY'),900000);
+insert into ve values('VE05','KH02','LT10',To_date('27/06/2002','DD/MM/YYYY'),1500000);
+insert into ve values('VE06','KH03','LT11',To_date('27/06/2002','DD/MM/YYYY'),2100000);
+-------------------------------------------------------------------------------------------------
+insert into ghe values('GHE01','TAU01',300000);
+insert into ghe values('GHE02','TAU01',300000);
+insert into ghe values('GHE03','TAU01',300000);
+insert into ghe values('GHE04','TAU01',300000);
+insert into ghe values('GHE05','TAU01',300000);
+insert into ghe values('GHE06','TAU01',300000);
+insert into ghe values('GHE07','TAU01',300000);
+insert into ghe values('GHE08','TAU01',300000);
+insert into ghe values('GHE09','TAU01',300000);
+
+insert into ghe values('GHE01','TAU02',500000);
+insert into ghe values('GHE02','TAU02',500000);
+insert into ghe values('GHE03','TAU02',500000);
+insert into ghe values('GHE04','TAU02',500000);
+insert into ghe values('GHE05','TAU02',500000);
+insert into ghe values('GHE06','TAU02',500000);
+insert into ghe values('GHE07','TAU02',500000);
+insert into ghe values('GHE08','TAU02',500000);
+insert into ghe values('GHE09','TAU02',500000);
+
+insert into ghe values('GHE01','TAU03',700000);
+insert into ghe values('GHE02','TAU03',700000);
+insert into ghe values('GHE03','TAU03',700000);
+insert into ghe values('GHE04','TAU03',700000);
+insert into ghe values('GHE05','TAU03',700000);
+insert into ghe values('GHE06','TAU03',700000);
+insert into ghe values('GHE07','TAU03',700000);
+insert into ghe values('GHE08','TAU03',700000);
+insert into ghe values('GHE09','TAU03',700000);
+-------------------------------------------------------------------------------------------------
+insert into tau values('TAU01','Bình Dân 001',1);
+insert into tau values('TAU02','Cao Cấp 001',2);
+insert into tau values('TAU03','Thương Gia 001',3);
+
+-------------------------------------------------------------------------------------------------
+insert into khachhang values('KH01','Dương Ngọc Hải','0911385806','dnh123');
+insert into khachhang values('KH02','Nguyễn Tiến Nhân','0123456789','ntn123');
+insert into khachhang values('KH03','Nguyễn Đăng Khoa','0987654321','ndk123');
+
+-------------------------------------------------------------------------------------------------
+
+insert into taikhoan values('dnh123','dnh123','Tên cầu thủ yêu thích của bạn là gì?','Ronaldo',2);
+insert into taikhoan values('ntn123','ntn123','Tên diễn viên yêu thích của bạn là gì?','Ninh Dương Lan Ngọc',2);
+insert into taikhoan values('ndk123','ndk123','Tên con vật yêu thích của bạn là gì?','Hồ ly tinh',2);
+insert into taikhoan values('admin123','admin05112002','Tên của bạn là gì?','Dương Ngọc Hải',1);
+--select * from ga
+--select * from lichtrinh
+--select maLT,gaKH,gaKT,maTau,TgianKH ,to_char( TgianKH, 'HH24:MI:SS DD/MM/YYYY' ) as Gio_Ngay from LichTrinh
+--select * from CTve
+--select * from Ve
+--select * from Ghe
+--select * from Tau
+--select * from KhachHang
+--select * from KhachHang
+
+--drop table ga
+--/
+--drop table lichtrinh
+--/
+--drop table ctve
+--/
+--drop table ve
+--/
+--drop table ghe
+--/
+--drop table tau
+--/
+--drop table khachhang
+--/
+--drop table Taikhoan
+
+--commit
+
+--Khoa Lich Trinh
+alter table LichTrinh
+add CONSTRAINT fk_LT_gaKH FOREIGN KEY (GAKH) REFERENCES GA(maGa);
+alter table LichTrinh
+add CONSTRAINT fk_LT_gaKT FOREIGN KEY (GAKT) REFERENCES GA(maGa);
+alter table LichTrinh
+add CONSTRAINT fk_LT_MATAU FOREIGN KEY (MATAU) REFERENCES TAU(MATAU);
+
+--Khoa Chi Tiet Ve
+alter table CTVe
+add CONSTRAINT Pk_CTVe PRIMARY KEY (MAVE,MAGHE);
+alter table CTVe
+add CONSTRAINT fk_CTVe_MaVe FOREIGN KEY (MAVE) REFERENCES VE(MAVE);
+
+--Khoa Ve
+alter table VE
+add CONSTRAINT fk_Ve_MaKHang FOREIGN KEY (MAKH) REFERENCES KHACHHANG(MaKH);
+alter table VE
+add CONSTRAINT fk_Ve_MaLT FOREIGN KEY (MALT) REFERENCES LICHTRINH(MALT);
+
+--Trigger SDT
+CREATE OR REPLACE TRIGGER std_tr
+    BEFORE INSERT OR UPDATE OF SODT ON KHACHHANG
+    FOR EACH ROW
+BEGIN
+    IF(:new.SODT<9)THEN
+        raise_application_error(-20999,'Sai dinh dang');
+    END IF;
+END;
+
+--Trigger VE
+/
+CREATE OR REPLACE TRIGGER ve_tr
+    BEFORE INSERT  ON VE
+    FOR EACH ROW
+BEGIN
+    IF(:new.NGAYDATVE > sysdate )THEN
+        raise_application_error(-20999,'Sai dinh dang');
+    END IF;
+END;
