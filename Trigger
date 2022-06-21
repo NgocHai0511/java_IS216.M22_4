@@ -1,3 +1,5 @@
+
+
 --Khoa Lich Trinh
 alter table LichTrinh
 add CONSTRAINT fk_LT_gaKH FOREIGN KEY (GAKH) REFERENCES GA(maGa);
@@ -11,9 +13,6 @@ alter table CTVe
 add CONSTRAINT Pk_CTVe PRIMARY KEY (MAVE,MAGHE);
 alter table CTVe
 add CONSTRAINT fk_CTVe_MaVe FOREIGN KEY (MAVE) REFERENCES VE(MAVE);
--- Loi rang buoc
---alter table CTVe
---add CONSTRAINT fk_CTVe_MaGhe FOREIGN KEY (MAGHE) REFERENCES GHE(MAGHE);
 
 --Khoa Ve
 alter table VE
@@ -30,8 +29,7 @@ BEGIN
         raise_application_error(-20999,'Sai dinh dang');
     END IF;
 END;
---Test Trigger SDT
---insert into khachhang values('KH04','Nguy?n ??ng Khoa','09876549','ndk123');
+
 --Trigger VE
 CREATE OR REPLACE TRIGGER ve_tr
     BEFORE INSERT  ON VE
@@ -41,8 +39,7 @@ BEGIN
         raise_application_error(-20999,'Sai dinh dang');
     END IF;
 END;
---Test Trigger Ve
---insert into ve values('VE07','KH01','LT09','07/JULY/2022',900000);
+
 
 
 
