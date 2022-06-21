@@ -18,13 +18,13 @@
 
 > ```Sửa Thông Tin Cá Nhân``` : khách hàng có thể sửa đổi thông tin cơ bản của cá nhân
 
-> ```Quản Lý Khách Hàng``` : Người quản lý có thể thêm xóa hoặc sửa những thông tin cơ bản của khách hàng
+> ```Quản Lý Khách Hàng``` : Người quản lý có thể thêm hoặc sửa những thông tin cơ bản của khách hàng
 
 > ```Quản Lý Tàu``` : Người quản lý có thể thêm xóa hoặc sửa những thông tin cơ bản của tàu
 
 > ```Quản Lý Ga``` : Người quản lý có thể thêm xóa hoặc sửa những thông tin cơ bản của ga tàu
 
-> ```Quản Lý Lịch Trình``` : Người quản lý có thể thêm xóa hoặc sửa những thông tin cơ bản của lịch trình
+> ```Quản Lý Lịch Trình``` : Người quản lý có thể thêm hoặc sửa những thông tin cơ bản của lịch trình
 
 > ```Thống Kê``` : Người quản lý có thể thống kê số vé bán được, doanh thu của một tuyến có thời gian khởi hành trong khoản nhất định
 
